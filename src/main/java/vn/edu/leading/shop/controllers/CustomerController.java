@@ -13,7 +13,6 @@ import vn.edu.leading.shop.models.CustomerModel;
 import vn.edu.leading.shop.services.CustomerService;
 
 import javax.validation.Valid;
-import javax.xml.ws.BindingProvider;
 
 @Controller
 public class CustomerController {
@@ -41,11 +40,11 @@ public class CustomerController {
         return "customers/list";
     }
 
-    @GetMapping("/customer/add")
+    @GetMapping("/customers/add")
     public String add(Model model)
     {
         model.addAttribute("customerModel",new CustomerModel());
-        return "customers/list";
+        return "customers/form";
     }
 
     @GetMapping("/customers/{id}/edit")

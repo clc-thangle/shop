@@ -53,6 +53,7 @@ public class CustomerServiceImpl implements CustomerService {
         {
             return false;
         }
+        customerRepository.delete(customerModel);
         return true;
     }
 }

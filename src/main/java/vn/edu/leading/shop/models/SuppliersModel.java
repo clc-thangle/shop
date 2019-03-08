@@ -1,24 +1,27 @@
 package vn.edu.leading.shop.models;
+
 import lombok.*;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
 @Setter
+@Getter
 @ToString
-@Table(name = "shop_customers")
-public class CustomerModel extends BaseModel<CustomerModel>{
+@Table(name = "shop_suppliers")
+
+public class SuppliersModel extends BaseModel<SuppliersModel> {
+    @NotEmpty
+    @Column(name = "supplier_name", nullable = false)
+    private String supplierName;
 
     @NotEmpty
-    @Column(name = "customer_name",nullable = false)
-    private String customerName;
-
-    @NotEmpty
-    @Column(name = "contact_name",nullable = false)
+    @Column(name = "contact_name", nullable = false)
     private String contactName;
 
     private String address;
@@ -29,4 +32,6 @@ public class CustomerModel extends BaseModel<CustomerModel>{
     private String postalCode;
 
     private String country;
+
+    private String phone;
 }
